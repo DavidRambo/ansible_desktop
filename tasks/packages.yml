@@ -1,5 +1,7 @@
 - name: Install packages
   package:
     name:
+      - fonts-font-awesome
       - python3-psutil
       - tree
+      - zsh
