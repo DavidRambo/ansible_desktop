@@ -1,0 +1,7 @@
+# git repositories to clone
+- name: PowerLevel10k for zsh
+  git:
+    repo: https://github.com/romkatv/powerlevel10k.git
+    dest: "{{ lookup('env', 'HOME') }}/powerlevel10k/"
+    clone: yes
+    depth: 1

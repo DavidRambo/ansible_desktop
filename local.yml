@@ -10,3 +10,4 @@
     - include: tasks/packages.yml
     - include: tasks/gnome.yml
     - include: tasks/fonts.yml
+    - include: tasks/git.yml
