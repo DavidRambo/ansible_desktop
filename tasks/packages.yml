@@ -1,6 +1,7 @@
 - name: Install packages
   package:
     name:
+      - flatpak
       - fonts-font-awesome
       - python3-psutil
       - tree
