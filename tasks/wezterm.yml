@@ -1,0 +1,17 @@
+# Install Wezterm as deb for x86_64
+- name: Check whether Wezterm package is installed
+  command: dpkg-query -W wezterm
+  register: wezterm_check_deb
+  failed_when: wezterm_check_deb.rc > 1
+  changed_when: wezterm_check_deb.rc == 1
+
+- name: Download Wezterm package
+  get_url:
+    url="https://github.com/wez/wezterm/releases/download/20221119-145034-49b9839f/wezterm-20221119-145034-49b9839f.Ubuntu22.04.deb"
+    dest="/home/{{ ansible_env.USER }}/Downloads/wezterm.deb"
+  when: wezterm_check_deb.rc == 1
+
+- name: Install Wezterm package
+  apt: deb="/home/{{ ansible_env.USER }}/Downloads/wezterm.deb"
+  sudo: true
+  when: wezterm_check_deb.rc == 1

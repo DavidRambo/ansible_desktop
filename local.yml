@@ -12,3 +12,4 @@
     - include: tasks/gnome.yml
     - include: tasks/fonts.yml
     - include: tasks/git.yml
+    - include: tasks/wezterm.yml
