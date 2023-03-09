@@ -1,0 +1,12 @@
+- hosts: localhost
+  become: true
+  pre_tasks:
+    - name: update package cache
+      apt: update_cache=yes
+      changed_when: False
+      when: ansible_distribution in ["Debian", "Ubuntu"]
+
+  tasks:
+    - include: tasks/packages.yml
+    - include: tasks/gnome.yml
+    - include: tasks/fonts.yml
