@@ -1,33 +1,33 @@
 - name: Gnome Workspace Keybindings
   dconf:
-    key: "org/gnome/desktop/wm/keybindings/move-to-workspace-left"
+    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-left"
     value: "['<Primary><Shift><Super>n']"
     state: present
   dconf:
-    key: "org/gnome/desktop/wm/keybindings/move-to-workspace-right"
+    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-right"
     value: "['<Primary><Shift><Super>i']"
     state: present
   dconf:
-    key: "org/gnome/desktop/wm/keybindings/switch-to-workspace-left"
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-left"
     value: "['<Primary><Super>n']"
     state: present
   dconf:
-    key: "org/gnome/desktop/wm/keybindings/switch-to-workspace-right"
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-right"
     value: "['<Primary><Super>i']"
     state: present
   dconf:
-    key: "org/gnome/desktop/wm/keybindings/switch-to-workspace-1"
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-1"
     value: "['<Primary><Super>1']"
     state: present
   dconf:
-    key: "org/gnome/desktop/wm/keybindings/switch-to-workspace-2"
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-2"
     value: "['<Primary><Super>2']"
     state: present
   dconf:
-    key: "org/gnome/desktop/wm/keybindings/switch-to-workspace-3"
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-3"
     value: "['<Primary><Super>3']"
     state: present
   dconf:
-    key: "org/gnome/desktop/wm/keybindings/switch-to-workspace-4"
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-4"
     value: "['<Primary><Super>4']"
     state: present
