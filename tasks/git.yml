@@ -1,12 +1,19 @@
 # git repositories to clone
 - name: Dotfiles
+  become_user: david
   git:
     repo: https://github.com/DavidRambo/dotfiles.git
     dest: "/home/{{ lookup('env', 'HOME') }}/dotfiles/"
     bare: true
 
+- name: Checkout dotfiles
+  ansible.builtin.shell:
+    cmd: rm .bashrc
+    cmd: rm .vimrc
+    chdir: dotfiles/
+    cmd: git checkout
+
 - name: PowerLevel10k for zsh
-  become: no
   git:
     repo: https://github.com/romkatv/powerlevel10k.git
     dest: "{{ lookup('env', 'HOME') }}/powerlevel10k/"
