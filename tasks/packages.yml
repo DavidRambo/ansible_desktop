@@ -1,8 +1,12 @@
 - name: Install packages
   package:
     name:
+      - dust
       - flatpak
       - fonts-font-awesome
+      - fzf
+      - htop
+      # - lsd
       - python3-psutil
       - tree
       - zsh
