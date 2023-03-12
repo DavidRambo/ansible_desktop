@@ -1,5 +1,12 @@
 # git repositories to clone
+- name: Dotfiles
+  git:
+    repo: https://github.com/DavidRambo/dotfiles.git
+    dest: "/home/{{ lookup('env', 'HOME') }}/dotfiles/"
+    bare: true
+
 - name: PowerLevel10k for zsh
+  become: no
   git:
     repo: https://github.com/romkatv/powerlevel10k.git
     dest: "{{ lookup('env', 'HOME') }}/powerlevel10k/"
