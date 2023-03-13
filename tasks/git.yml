@@ -19,5 +19,5 @@
   git:
     repo: https://github.com/romkatv/powerlevel10k.git
     dest: "{{ lookup('env', 'HOME') }}/powerlevel10k/"
-    clone: yes
+    clone: true
     depth: 1
