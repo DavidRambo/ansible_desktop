@@ -1,12 +1,13 @@
 - name: Ensure fonts directory exists
-  become_user: david
   file:
-    path: "{{ lookup('env', 'HOME') }}/.fonts"
+    path: "/home/david/.fonts"
     state: directory
-    mode: 0644
+    owner: david
+    group: david
+    mode: 0775
 
 - name: Jet Brains exists
-  shell: "ls {{ lookup('env', 'HOME') }}/.fonts/Jet*Brains*Mono*"
+  shell: "ls /home/david/.fonts/Jet*Brains*Mono*"
   register: jetbrains_exists
   ignore_errors: true
   changed_when: false
@@ -15,7 +16,7 @@
   when: jetbrains_exists is failed
   ansible.builtin.unarchive:
     src: "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/JetBrainsMono.zip"
-    dest: "{{ lookup('env', 'HOME') }}/.fonts/"
+    dest: "/home/david/.fonts/"
     remote_src: true
 
 - name: Refresh font list
