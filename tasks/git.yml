@@ -6,10 +6,12 @@
     dest: "/home/{{ lookup('env', 'HOME') }}/dotfiles/"
     bare: true
 
+- name: Delete dotfiles
+  ansible.builtin.shell:
+    cmd: rm .bashrc .vimrc
+
 - name: Checkout dotfiles
   ansible.builtin.shell:
-    cmd: rm .bashrc
-    cmd: rm .vimrc
     chdir: dotfiles/
     cmd: git checkout
 
