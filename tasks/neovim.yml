@@ -1,8 +1,28 @@
 ---
+- name: Check whether neovim installed
+  command: dpkg-query -W neovim
+  register: nvim_check_deb
+  failed_when: nvim_check_deb.rc > 1
+  changed_when: nvim_check_deb.rc == 1
+
 - name: Download latest neovim nightly
   get_url:
     url="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb"
-    dest="/home/{{ ansible_env.USER }}/Downloads/nvim-linux64.deb"
+    dest="/home/david/Downloads/nvim-linux64.deb"
+  when: nvim_check_deb.rc == 1
 
 - name: Install neovim deb
-  apt: deb="/home/{{ ansible_env.USER }}/Downloads/nvim-linux64.deb"
+  apt: deb="/home/david/Downloads/nvim-linux64.deb"
+  when: nvim_check_deb.rc == 1
+
+- name: Clone neovim config
+  git:
+    repo: https://github.com/DavidRambo/neovim_config.git
+    dest: "/home/david/.config/nvim/"
+    version: HEAD
+  when: nvim_check_deb.rc == 1
+
+- name: Clean neovim deb file
+  file:
+    path="/home/david/Downloads/neovim.deb"
+    state=absent

@@ -15,3 +15,8 @@
 - name: Install Wezterm package
   apt: deb="/home/david/Downloads/wezterm.deb"
   when: wezterm_check_deb.rc == 1
+
+- name: Clean wezterm deb file
+  file:
+    path="/home/david/Downloads/wezterm.deb"
+    state=absent
