@@ -4,6 +4,7 @@
     name:
       # - dust
       - flatpak
+      - font-manager
       - fonts-font-awesome
       - fzf
       - htop
