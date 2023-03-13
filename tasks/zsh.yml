@@ -1,0 +1,16 @@
+---
+- name: Check whether zsh pkg is installed
+  command: dpkg-query -W zsh
+  register: zsh_check_pkg
+  failed_when: zsh_check_pkg.rc > 1
+  changed_when: zsh_check_pkg.rc == 1
+
+- name: Install zsh
+  package:
+    apt: zsh
+  when: zsh_check_pkg == 1
+
+- name: Change default shell to zsh
+  command:
+    "chsh -s $(which zsh)"
+  when: zsh_check_pkg == 1
