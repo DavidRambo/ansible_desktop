@@ -123,18 +123,25 @@
   dconf:
     key: "/org/gnome/shell/extensions/pop-shell/focus-down"
     value: "['<Super>e']"
+    state: present
+
 - name: Focus window left
   dconf:
     key: "/org/gnome/shell/extensions/pop-shell/focus-left"
     value: "['<Super>n']"
+    state: present
+
 - name: Focus window right
   dconf:
     key: "/org/gnome/shell/extensions/pop-shell/focus-right"
-    value: "'<Super>i']"
+    value: "['<Super>i']"
+    state: present
+
 - name: Focus window up
   dconf:
     key: "/org/gnome/shell/extensions/pop-shell/focus-up"
     value: "['<Super>u']"
+    state: present
 
 # File Manager
 - name: List-view as default in file explorer
