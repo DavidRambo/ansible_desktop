@@ -147,7 +147,7 @@
 - name: Flat mouse acceleration
   dconf:
     key: "/org/gnome/desktop/peripherals/mouse/accel-profile"
-    value: "flat"
+    value: "'flat'"
     state: present
 
 - name: Mouse speed
