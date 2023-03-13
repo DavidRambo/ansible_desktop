@@ -3,27 +3,30 @@
   become_user: david
   git:
     repo: https://github.com/DavidRambo/dotfiles.git
-    dest: "{{ lookup('env', 'HOME') }}/dotfiles/"
+    dest: "/home/david/repos/dotfiles/"
     bare: true
     version: main
 
-- name: Delete .bashrc
-  file:
-    path: "{{ lookup('env', 'HOME') }}/.bashrc"
-    state: absent
+# - name: Delete .bashrc
+#   file:
+#     path: "/home/david/.bashrc"
+#     state: absent
 
-- name: Delete .vimrc
-  file:
-    path: "{{ lookup('env', 'HOME') }}/.vimrc"
-    state: absent
-
-- name: Checkout dotfiles
-  command: cd dotfiles/ && git checkout
+# - name: Delete .vimrc
+#   file:
+#     path: "/home/david/.vimrc"
+#     state: absent
+ 
+# - name: Checkout dotfiles
+#   command:
+#     chdir="/home/david/repos/dotfiles/"
+#   command:
+#     cmd: git checkout
 
 - name: PowerLevel10k for zsh
   git:
     repo: https://github.com/romkatv/powerlevel10k.git
-    dest: "{{ lookup('env', 'HOME') }}/powerlevel10k/"
+    dest: "/home/david/powerlevel10k/"
     clone: true
     depth: 1
-    version: main
+    version: HEAD
