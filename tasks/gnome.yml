@@ -80,39 +80,39 @@
 # Launchers
 - name: Launch calculator
   dconf:
-    key: "org/gnome/settings-daemon/plugins/media-keys/calculator"
+    key: "/org/gnome/settings-daemon/plugins/media-keys/calculator"
     value: "['<Super>c']"
     state: present
 
 - name: Launch Home Folder in File Explorer
   dconf:
-    key: "org/gnome/settings-daemon/plugins/media-keys/home"
+    key: "/org/gnome/settings-daemon/plugins/media-keys/home"
     value: "['<Super>h']"
     state: present
 
 # Window Manager Preferences
 - name: Focus Mode
   dconf:
-    key: "org/gnome/desktop/wm/preferences/focus-mode"
+    key: "/org/gnome/desktop/wm/preferences/focus-mode"
     value: "click"
     state: present
 
 - name: Hide Applications button
   dconf:
-    key: "org/gnome/shell/extensions/pop-cosmic/show-applications-button"
+    key: "/org/gnome/shell/extensions/pop-cosmic/show-applications-button"
     value: "false"
     state: present
 
 - name: Hide Workspaces button
   dconf:
-    key: "org/gnome/shell/extensions/pop-cosmic/show-workspaces-button"
+    key: "/org/gnome/shell/extensions/pop-cosmic/show-workspaces-button"
     value: "false"
     state: present
 
 # Pop-Shell
 - name: Pop-Shell Settings
   dconf:
-    key: "org/gnome/shell/extensions/pop-shell/{{ pop_shell_dict.key }}"
+    key: "/org/gnome/shell/extensions/pop-shell/{{ pop_shell_dict.key }}"
     value: "{{ pop_shell_dict.value }}"
     state: present
     vars:
@@ -131,44 +131,44 @@
 # File Manager
 - name: List-view as default in file explorer
   dconf:
-    key: "org/gnome/nautilus/preferences/default-folder-viewer"
+    key: "/org/gnome/nautilus/preferences/default-folder-viewer"
     value: "list-view"
     state: present
 
 - name: Filter by last modified
   dconf:
-    key: "org/gnome/nautilus/preferences/search-filter-time-type"
+    key: "/org/gnome/nautilus/preferences/search-filter-time-type"
     value: "last_modified"
     state: present
 
 - name: List-view when searching
   dconf:
-    key: "org/gnome/nautilus/preferences/search-view"
+    key: "/org/gnome/nautilus/preferences/search-view"
     value: "list-view"
     state: present
 
 # Mouse
 - name: Flat mouse acceleration
   dconf:
-    key: "org/gnome/desktop/peripherals/mouse/accel-profile"
+    key: "/org/gnome/desktop/peripherals/mouse/accel-profile"
     value: "flat"
     state: present
 
 - name: Mouse speed
   dconf:
-    key: "org/gnome/desktop/peripherals/mouse/speed"
+    key: "/org/gnome/desktop/peripherals/mouse/speed"
     value: "-0.125"
     state: present
 
 # Extension Settings
 - name: Horizontal workspace indicator
   dconf:
-    key: "org/gnome/shell/extensions/horizontal-workspace-indicator/widget-orientation"
+    key: "/org/gnome/shell/extensions/horizontal-workspace-indicator/widget-orientation"
     value: "horizontal"
     state: present
 
 - name: Workspace indicator on left
   dconf:
-    key: "org/gnome/shell/extensions/horizontal-workspace-indicator/widget-position"
+    key: "/org/gnome/shell/extensions/horizontal-workspace-indicator/widget-position"
     value: "left"
     state: present
