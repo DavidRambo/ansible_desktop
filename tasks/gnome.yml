@@ -105,22 +105,22 @@
 
 # Pop-Shell
 - name: Pop-Shell Settings
+  vars:
+    pop_shell_dict:
+      show-title: false
+      gap-inner: "uint32 3"
+      gap-outer: "uint32 3"
+      active-hint: true
+      active-hint-border-radius: "uint32 2"
+      hint-color-rgba: "rgb(110,115,141)"
+      focus-down: "['<Super>Down', '<Super>KP_Down', '<Super>e']"
+      focus-left: "['<Super>Left', '<Super>KP_Left', '<Super>n']"
+      focus-right: "['<Super>Right', '<Super>KP_Right', '<Super>i']"
+      focus-up: "['<Super>Up', '<Super>KP_Up', '<Super>u']"
   dconf:
     key: "/org/gnome/shell/extensions/pop-shell/{{ pop_shell_dict.key }}"
     value: "{{ pop_shell_dict.value }}"
     state: present
-    vars:
-      pop_shell_dict:
-        show-title: false
-        gap-inner: "uint32 3"
-        gap-outer: "uint32 3"
-        active-hint: true
-        active-hint-border-radius: "uint32 2"
-        hint-color-rgba: "rgb(110,115,141)"
-        focus-down: "['<Super>Down', '<Super>KP_Down', '<Super>e']"
-        focus-left: "['<Super>Left', '<Super>KP_Left', '<Super>n']"
-        focus-right: "['<Super>Right', '<Super>KP_Right', '<Super>i']"
-        focus-up: "['<Super>Up', '<Super>KP_Up', '<Super>u']"
 
 # File Manager
 - name: List-view as default in file explorer
