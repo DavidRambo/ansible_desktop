@@ -128,6 +128,28 @@
         focus-right: "['<Super>Right', '<Super>KP_Right', '<Super>i']"
         focus-up: "['<Super>Up', '<Super>KP_Up', '<Super>u']"
 
+# Gnome Terminal Profile
+- name: Gnome Terminal Profile - Catppuccin Macchiato
+  dconf:
+  key: "org/gnome/terminal/legacy/profiles:/:5083e06b-024e-46be-9cd2-892b814f1fc8/{{ gnome_term_dict.key }}"
+  value: "{{ gnome_term_dict.value }}"
+  state: present
+  vars:
+    gnome_term_dict:
+      background-color: "#24273a"
+      cell-height-scale: 1.2000000000000002
+      cursor-background-color: "#f4dbd6"
+      cursor-colors-set: true
+      cursor-foreground-color: "#24273a"
+      font: "JetBrains Mono 12"
+      foreground-color: "#cad3f5"
+      highlight-background-color: "#24273a"
+      highlight-colors-set: true
+      highlight-foreground-color: "#5b6078"
+      palette: ['#494d64', '#ed8796', '#a6da95', '#eed49f', '#8aadf4', '#f5bde6', '#8bd5ca', '#b8c0e0', '#5b6078', '#ed8796', '#a6da95', '#eed49f', '#8aadf4', '#f5bde6', '#8bd5ca', '#a5adcb']
+      use-theme-colors: false
+      visible-name: "Catppuccin Macchiato"
+
 # File Manager
 - name: List-view as default in file explorer
   dconf:
