@@ -105,6 +105,11 @@
 
 # Pop-Shell
 - name: Pop-Shell Settings
+  dconf:
+    key: "/org/gnome/shell/extensions/pop-shell/{{ item.key }}"
+    value: "{{ item.value }}"
+    state: present
+  loop: "{{ pop_shell_dict | dict2items }}"
   vars:
     pop_shell_dict:
       show-title: false
@@ -117,10 +122,6 @@
       focus-left: "['<Super>Left', '<Super>KP_Left', '<Super>n']"
       focus-right: "['<Super>Right', '<Super>KP_Right', '<Super>i']"
       focus-up: "['<Super>Up', '<Super>KP_Up', '<Super>u']"
-  dconf:
-    key: "/org/gnome/shell/extensions/pop-shell/{{ pop_shell_dict.key }}"
-    value: "{{ pop_shell_dict.value }}"
-    state: present
 
 # File Manager
 - name: List-view as default in file explorer
