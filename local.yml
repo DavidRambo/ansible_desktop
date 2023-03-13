@@ -27,3 +27,4 @@
     - include: tasks/git.yml
     - include: tasks/wezterm.yml
     - include: tasks/zsh.yml
+    - include: tasks/python.yml
