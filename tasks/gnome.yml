@@ -118,10 +118,10 @@
       active-hint: "true"
       active-hint-border-radius: "uint32 2"
       hint-color-rgba: "'rgb(110,115,141)'"
-      focus-down: ['<Super>Down', '<Super>KP_Down', '<Super>e']
-      focus-left: ['<Super>Left', '<Super>KP_Left', '<Super>n']
-      focus-right: ['<Super>Right', '<Super>KP_Right', '<Super>i']
-      focus-up: ['<Super>Up', '<Super>KP_Up', '<Super>u']
+      focus-down: "['<Super>e']"
+      focus-left: "['<Super>n']"
+      focus-right: "'<Super>i']"
+      focus-up: "['<Super>u']"
 
 # File Manager
 - name: List-view as default in file explorer
