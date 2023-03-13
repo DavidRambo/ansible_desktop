@@ -18,8 +18,12 @@
   tasks:
     # - include: tasks/flatpaks.yml
     - include: tasks/packages.yml
+    - include: tasks/lsd.yml
+    - include: tasks/dust.yml
     # - include: tasks/extensions.yml
     - include: tasks/gnome.yml
     - include: tasks/fonts.yml
+    - include: tasks/neovim.yml
     - include: tasks/git.yml
     - include: tasks/wezterm.yml
+    - include: tasks/zsh.yml
