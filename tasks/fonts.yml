@@ -3,11 +3,13 @@
   file:
     path: "{{ lookup('env', 'HOME') }}/.fonts"
     state: directory
+    mode: 0644
 
 - name: Jet Brains exists
   shell: "ls {{ lookup('env', 'HOME') }}/.fonts/Jet*Brains*Mono*"
   register: jetbrains_exists
   ignore_errors: true
+  changed_when: false
 
 - name: Download Jet Brains
   when: jetbrains_exists is failed
