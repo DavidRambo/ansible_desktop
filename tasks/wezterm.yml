@@ -6,11 +6,12 @@
   changed_when: wezterm_check_deb.rc == 1
 
 - name: Download Wezterm package
+  become_user: david
   get_url:
     url="https://github.com/wez/wezterm/releases/download/20221119-145034-49b9839f/wezterm-20221119-145034-49b9839f.Ubuntu22.04.deb"
-    dest="/home/{{ ansible_env.USER }}/Downloads/wezterm.deb"
+    dest="/home/david/Downloads/wezterm.deb"
   when: wezterm_check_deb.rc == 1
 
 - name: Install Wezterm package
-  apt: deb="/home/{{ ansible_env.USER }}/Downloads/wezterm.deb"
+  apt: deb="/home/david/Downloads/wezterm.deb"
   when: wezterm_check_deb.rc == 1
