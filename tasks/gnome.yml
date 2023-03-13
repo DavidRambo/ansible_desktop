@@ -118,10 +118,23 @@
       active-hint: "true"
       active-hint-border-radius: "uint32 2"
       hint-color-rgba: "'rgb(110,115,141)'"
-      focus-down: "['<Super>e']"
-      focus-left: "['<Super>n']"
-      focus-right: "'<Super>i']"
-      focus-up: "['<Super>u']"
+
+- name: Focus window down
+  dconf:
+    key: "/org/gnome/shell/extensions/pop-shell/focus-down"
+    value: "['<Super>e']"
+- name: Focus window left
+  dconf:
+    key: "/org/gnome/shell/extensions/pop-shell/focus-left"
+    value: "['<Super>n']"
+- name: Focus window right
+  dconf:
+    key: "/org/gnome/shell/extensions/pop-shell/focus-right"
+    value: "'<Super>i']"
+- name: Focus window up
+  dconf:
+    key: "/org/gnome/shell/extensions/pop-shell/focus-up"
+    value: "['<Super>u']"
 
 # File Manager
 - name: List-view as default in file explorer
