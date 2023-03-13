@@ -1,39 +1,174 @@
-- dconf:
+# Keybindings
+- name: move window up a workspace
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-up"
+    value: "['<Primary><Shift><Super>u']"
+    state: present
+
+- name: move window down a workspace
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-down"
+    value: "['<Primary><Shift><Super>e']"
+    state: present
+
+- name: move window left a workspace
+  dconf:
     key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-left"
     value: "['<Primary><Shift><Super>n']"
     state: present
 
-- dconf:
+- name: move window right a workspace
+  dconf:
     key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-right"
     value: "['<Primary><Shift><Super>i']"
     state: present
 
-- dconf:
+- name: Switch to left workspace
+  dconf:
     key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-left"
     value: "['<Primary><Super>n']"
     state: present
 
-- dconf:
+- name: Switch to right workspace
+  dconf:
     key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-right"
     value: "['<Primary><Super>i']"
     state: present
 
-- dconf:
+- name: Switch to workspace 1
+  dconf:
     key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-1"
     value: "['<Primary><Super>1']"
     state: present
 
-- dconf:
+- name: Switch to workspace 2
+  dconf:
     key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-2"
     value: "['<Primary><Super>2']"
     state: present
 
-- dconf:
+- name: Switch to workspace 3
+  dconf:
     key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-3"
     value: "['<Primary><Super>3']"
     state: present
 
-- dconf:
+- name: Switch to workspace 4
+  dconf:
     key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-4"
     value: "['<Primary><Super>4']"
+    state: present
+
+- name: Switch applications
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-applications"
+    value: "['<Alt>Tab']"
+    state: present
+
+- name: Switch applications backwards
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-applications-backward"
+    value: "['<Shift><Alt>Tab']"
+    state: present
+
+- name: Toggle fullscreen
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/toggle-fullscreen"
+    value: "['<Super>m']"
+    state: present
+
+# Launchers
+- name: Launch calculator
+  dconf:
+    key: "org/gnome/settings-daemon/plugins/media-keys/calculator"
+    value: "['<Super>c']"
+    state: present
+
+- name: Launch Home Folder in File Explorer
+  dconf:
+    key: "org/gnome/settings-daemon/plugins/media-keys/home"
+    value: "['<Super>h']"
+    state: present
+
+# Window Manager Preferences
+- name: Focus Mode
+  dconf:
+    key: "org/gnome/desktop/wm/preferences/focus-mode"
+    value: "click"
+    state: present
+
+- name: Hide Applications button
+  dconf:
+    key: "org/gnome/shell/extensions/pop-cosmic/show-applications-button"
+    value: "false"
+    state: present
+
+- name: Hide Workspaces button
+  dconf:
+    key: "org/gnome/shell/extensions/pop-cosmic/show-workspaces-button"
+    value: "false"
+    state: present
+
+# Pop-Shell
+- name: Pop-Shell Settings
+  dconf:
+    key: "org/gnome/shell/extensions/pop-shell/{{ pop_shell_dict.key }}"
+    value: "{{ pop_shell_dict.value }}"
+    state: present
+    vars:
+      pop_shell_dict:
+        show-title: false
+        gap-inner: "uint32 3"
+        gap-outer: "uint32 3"
+        active-hint: true
+        active-hint-border-radius: "uint32 2"
+        hint-color-rgba: "rgb(110,115,141)"
+        focus-down: "['<Super>Down', '<Super>KP_Down', '<Super>e']"
+        focus-left: "['<Super>Left', '<Super>KP_Left', '<Super>n']"
+        focus-right: "['<Super>Right', '<Super>KP_Right', '<Super>i']"
+        focus-up: "['<Super>Up', '<Super>KP_Up', '<Super>u']"
+
+# File Manager
+- name: List-view as default in file explorer
+  dconf:
+    key: "org/gnome/nautilus/preferences/default-folder-viewer"
+    value: "list-view"
+    state: present
+
+- name: Filter by last modified
+  dconf:
+    key: "org/gnome/nautilus/preferences/search-filter-time-type"
+    value: "last_modified"
+    state: present
+
+- name: List-view when searching
+  dconf:
+    key: "org/gnome/nautilus/preferences/search-view"
+    value: "list-view"
+    state: present
+
+# Mouse
+- name: Flat mouse acceleration
+  dconf:
+    key: "org/gnome/desktop/peripherals/mouse/accel-profile"
+    value: "flat"
+    state: present
+
+- name: Mouse speed
+  dconf:
+    key: "org/gnome/desktop/peripherals/mouse/speed"
+    value: "-0.125"
+    state: present
+
+# Extension Settings
+- name: Horizontal workspace indicator
+  dconf:
+    key: "org/gnome/shell/extensions/horizontal-workspace-indicator/widget-orientation"
+    value: "horizontal"
+    state: present
+
+- name: Workspace indicator on left
+  dconf:
+    key: "org/gnome/shell/extensions/horizontal-workspace-indicator/widget-position"
+    value: "left"
     state: present
