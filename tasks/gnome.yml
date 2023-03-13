@@ -143,25 +143,6 @@
     value: "['<Super>u']"
     state: present
 
-# File Manager
-- name: List-view as default in file explorer
-  dconf:
-    key: "/org/gnome/nautilus/preferences/default-folder-viewer"
-    value: "list-view"
-    state: present
-
-- name: Filter by last modified
-  dconf:
-    key: "/org/gnome/nautilus/preferences/search-filter-time-type"
-    value: "last_modified"
-    state: present
-
-- name: List-view when searching
-  dconf:
-    key: "/org/gnome/nautilus/preferences/search-view"
-    value: "list-view"
-    state: present
-
 # Mouse
 - name: Flat mouse acceleration
   dconf:
