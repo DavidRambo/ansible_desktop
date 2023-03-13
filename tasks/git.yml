@@ -3,17 +3,22 @@
   become_user: david
   git:
     repo: https://github.com/DavidRambo/dotfiles.git
-    dest: "/home/{{ lookup('env', 'HOME') }}/dotfiles/"
+    dest: "{{ lookup('env', 'HOME') }}/dotfiles/"
     bare: true
+    version: main
 
-- name: Delete dotfiles
-  ansible.builtin.shell:
-    cmd: rm .bashrc .vimrc
+- name: Delete .bashrc
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.bashrc"
+    state: absent
+
+- name: Delete .vimrc
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.vimrc"
+    state: absent
 
 - name: Checkout dotfiles
-  ansible.builtin.shell:
-    chdir: dotfiles/
-    cmd: git checkout
+  command: cd dotfiles/ && git checkout
 
 - name: PowerLevel10k for zsh
   git:
@@ -21,3 +26,4 @@
     dest: "{{ lookup('env', 'HOME') }}/powerlevel10k/"
     clone: true
     depth: 1
+    version: main
