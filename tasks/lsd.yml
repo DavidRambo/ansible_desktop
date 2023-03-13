@@ -1,0 +1,22 @@
+---
+- name: Check whether lsd is installed
+  command: dpkg-query -W lsd
+  register: lsd_check_deb
+  failed_when: lsd_check_deb.rc > 1
+  changed_when: lsd_check_deb.rc == 1
+
+- name: Download lsd
+  get_url:
+    url="https://github.com/Peltoche/lsd/releases/download/0.23.1/lsd-musl_0.23.1_amd64.deb"
+    dest="/home/david/Downloads/lsd.deb"
+  when: lsd_check_deb.rc == 1
+
+- name: Install lsd
+  apt:
+    deb="/home/david/Downloads/lsd.deb"
+  when: lsd_check_deb.rc == 1
+
+- name: Clean lsd deb file
+  file:
+    path="/home/david/Downloads/lsd.deb"
+    state=absent

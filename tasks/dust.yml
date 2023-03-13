@@ -1,0 +1,22 @@
+---
+- name: Check whether dust is installed
+  command: dpkg-query -W dust
+  register: dust_check_deb
+  failed_when: dust_check_deb.rc > 1
+  changed_when: dust_check_deb.rc == 1
+
+- name: Download dust
+  get_url:
+    url="https://github.com/bootandy/dust/releases/download/v0.8.4/du-dust_0.8.4_amd64.deb"
+    dest="/home/david/Downloads/dust.deb"
+  when: dust_check_deb.rc == 1
+
+- name: Install dust
+  apt:
+    deb="/home/david/Downloads/dust.deb"
+  when: dust_check_deb.rc == 1
+
+- name: Clean dust deb file
+  file:
+    path="/home/david/Downloads/dust.deb"
+    state=absent
