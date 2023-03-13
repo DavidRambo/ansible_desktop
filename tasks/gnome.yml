@@ -157,14 +157,14 @@
     state: present
 
 # Extension Settings
-- name: Horizontal workspace indicator
-  dconf:
-    key: "/org/gnome/shell/extensions/horizontal-workspace-indicator/widget-orientation"
-    value: "horizontal"
-    state: present
+# - name: Horizontal workspace indicator
+#   dconf:
+#     key: "/org/gnome/shell/extensions/horizontal-workspace-indicator/widget-orientation"
+#     value: "horizontal"
+#     state: present
 
-- name: Workspace indicator on left
-  dconf:
-    key: "/org/gnome/shell/extensions/horizontal-workspace-indicator/widget-position"
-    value: "left"
-    state: present
+# - name: Workspace indicator on left
+#   dconf:
+#     key: "/org/gnome/shell/extensions/horizontal-workspace-indicator/widget-position"
+#     value: "left"
+#     state: present
