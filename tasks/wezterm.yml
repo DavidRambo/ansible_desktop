@@ -13,5 +13,4 @@
 
 - name: Install Wezterm package
   apt: deb="/home/{{ ansible_env.USER }}/Downloads/wezterm.deb"
-  sudo: true
   when: wezterm_check_deb.rc == 1
