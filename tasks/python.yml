@@ -1,0 +1,24 @@
+---
+- name: Check whether pipx pkg is installed
+  command: dpkg-query -W pipx
+  register: pipx_check_pkg
+  failed_when: pipx_check_pkg.rc > 1
+  changed_when: pipx_check_pkg.rc == 1
+
+- name: install pipx
+  package:
+    apt: pipx
+  when: pipx_check_pkg == 1
+
+    # - name: check for pyenv
+    #   stat: 
+    #     path: /home/david/.pyenv
+    #   register: pyenv_installed 
+
+    # - name: install pyenv
+    #   command: curl https://pyenv.run | bash
+    #   when: not pyenv_installed.stat.exists
+
+    # - name: install mypy
+    #   community.general.pipx:
+    #     name: mypy
