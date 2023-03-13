@@ -91,12 +91,6 @@
     state: present
 
 # Window Manager Preferences
-- name: Focus Mode
-  dconf:
-    key: "/org/gnome/desktop/wm/preferences/focus-mode"
-    value: "click"
-    state: present
-
 - name: Hide Applications button
   dconf:
     key: "/org/gnome/shell/extensions/pop-cosmic/show-applications-button"
