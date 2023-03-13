@@ -2,12 +2,12 @@
   become: true
   package:
     name:
-      # - dust
+      - bat
       - flatpak
       - font-manager
       - fonts-font-awesome
       - fzf
       - htop
-      # - lsd
       - tree
+      - vim
       - zsh
